@@ -4,16 +4,16 @@ function getComputerChoice(){
     return choices[Math.floor(Math.random()*3)];
 };
 
-function playGame(playerSelection, computerSelection){
-    if (playerSelection==computerSelection){
+function playGame(playerChoice, computerChoice){
+    if (playerChoice==computerChoice){
         return 0;
     }
-    else if (playerSelection=="scissors"){
-        winner = computerSelection=="rock" ? 2 : 1;
-    } else if (playerSelection=="rock"){
-        winner = computerSelection=="paper" ? 2 : 1;
+    else if (playerChoice=="scissors"){
+        winner = computerChoice=="rock" ? 2 : 1;
+    } else if (playerChoice=="rock"){
+        winner = computerChoice=="paper" ? 2 : 1;
     } else {
-        winner = computerSelection=="scissors" ? 2 : 1;
+        winner = computerChoice=="scissors" ? 2 : 1;
     };
 
     return winner;
@@ -23,10 +23,11 @@ function gameToFive(){
     let player=0, computer=0;
 
     for (let i=0; i < 5; i++){
-        let playerSelection = prompt("Enter choice");
+        let playerChoice = prompt("Enter choice");
         let computerChoice = getComputerChoice();
-        const result = playGame(playerSelection.toLowerCase(), computerChoice);
+        const result = playGame(playerChoice.toLowerCase(), computerChoice);
         
+        console.log(computerChoice);
         if (result == 1){
             console.log(`You just won!`);
             player++;
