@@ -19,7 +19,7 @@ body > div{
 .nav{
     background-color: black;
     color: white;
-    padding: 20px 30px;
+    padding: 20px 50px;
     display: flex;
     justify-content: space-between;
 }
@@ -46,6 +46,12 @@ body > div{
     justify-content: center;
 }
 
+.game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .choices, .scores{
     display: flex;
     gap: 40px;
@@ -61,13 +67,6 @@ body > div{
     border-radius: 15px;
 }
 
-.commentary{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0px;
-}
-
 @media(max-width: 720px){
     .choices{
         flex-wrap: wrap;
@@ -79,8 +78,16 @@ body > div{
     }
 }
 
+.commentary{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+    height: 50px;
+    border-radius: 25px;
+}
+
 .footer{
-    text-align: center;
     background-color: black;
     color: white;
 }
