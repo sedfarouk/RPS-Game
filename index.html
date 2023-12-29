@@ -6,41 +6,52 @@
         <title>Document</title>
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
         <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
+        <script src="script.js" defer></script>
     </head>
     <body>
         <div class="nav"> 
-            <h3>Rock-Paper-Scissors </h3>
-            <div class="screen-mode">Mode</div>
+            <h3>Rock-Paper-Scissors</h3>
         </div>
 
         <div class="header">
-            <div class="left-content">
-                <h3>Welcome to my RPS Game</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, cupiditate.</p>
-            </div>
-            <button class="right-content">How to play</button>
+            <h3>Welcome to my RPS Game</h3>
+            <p>Do you seriously need a tutorial to play this game?</p>
         </div>
 
         <div class="main">
             <div class="game">
                 <div class="choices">
-                    <button class="rock"> 👊 </button>
-                    <button class="paper"> 👋 </button>
-                    <button class="scissors"> ✌ </button>
+                    <div class="rock choice">
+                        <p>👊</p> 
+                        <p>Rock</p>
+                    </div>
+                    <div class="paper choice">  
+                        <p>👋</p> 
+                        <p>Paper</p>
+                    </div>
+                    <div class="scissors choice">
+                        <p>✌</p> 
+                        <p>Scissors</p>
+                    </div>
                 </div>
 
                 <div class="scores">
-                    <button class="user">You</button>
-                    <button class="AI">AI</button>
+                    <div class="user">
+                        <p>You</p> 
+                        <p id="score">?</p>
+                    </div>
+                    <div class="AI">
+                        <p>AI</p> 
+                        <p id="score">?</p></div>
+                    </div>
                 </div>
 
                 <div class="commentary">
-                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    <p>Comments will be displayed here</p>
                 </div>
             </div>
         </div>
         
-        <div class="footer">Copyright &COPY; Farouk ♡</div>
+        <div class="footer">Copyright &COPY; Farouk. Leave a ⭐ on the <a href="https://github.com/FaroukDev-tech/RPS-Game">Github Repo</a> </div>
     </body>
 </html>

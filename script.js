@@ -4,46 +4,42 @@ function getComputerChoice(){
     return choices[Math.floor(Math.random()*3)];
 };
 
-function playGame(playerChoice, computerChoice){
+function playGame(playerChoice, computerChoice=getComputerChoice()){
     if (playerChoice==computerChoice){
-        return 0;
+        return "tie";
     }
     else if (playerChoice=="scissors"){
-        winner = computerChoice=="rock" ? 2 : 1;
+        winner = computerChoice=="rock" ? "AI" : "user";
     } else if (playerChoice=="rock"){
-        winner = computerChoice=="paper" ? 2 : 1;
+        winner = computerChoice=="paper" ? "AI" : "user";
     } else {
-        winner = computerChoice=="scissors" ? 2 : 1;
+        winner = computerChoice=="scissors" ? "AI" : "user";
     };
 
     return winner;
 };
 
-function gameToFive(){
-    let player=0, computer=0;
 
-    for (let i=0; i < 5; i++){
-        let playerChoice = prompt("Enter choice");
-        let computerChoice = getComputerChoice();
-        const result = playGame(playerChoice.toLowerCase(), computerChoice);
-        
-        console.log(computerChoice);
-        if (result == 1){
-            console.log(`You just won!`);
-            player++;
-        } else if (result == 2){
-            console.log(`Computer just won!`);
-            computer++;
-        } else {
-            console.log(`It's a tie.`);
-            player++;
-            computer++;
-        };
-    };
+const choiceBtns = document.querySelectorAll('.choice');
+const comment = document.querySelector('.commentary');
 
-    if (player > computer){
-        console.log("Congratulations! You are a champ!");
+let user=0, AI=0;
+choiceBtns.forEach((item)=>{item.addEventListener('click', function(){
+    const scores = document.querySelectorAll('#score');
+    let winner = playGame(item.classList[0].toLowerCase());
+
+    if (winner !=='tie') {
+        winner=="user" ? user++:AI++;
+        comment.textContent = `${winner} just won`;
     } else {
-        console.log("Better luck next time! Go and train.")
+        comment.textContent = `It's a draw. You earned a round. Play again.`
     }
-}
+
+    scores[0].textContent = user;
+    scores[1].textContent = AI;
+
+    if (user==5 || AI==5){
+        alert(`The game is over! \n User ${user} - AI ${AI}\n Consider leaving a star on the github repo!`);
+        location.reload(); 
+    }
+})});

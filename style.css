@@ -7,17 +7,17 @@ body{
     margin:0;
 }
 
-p, h3{
+p, h3, h6{
     padding: 0px;
     margin: 0px;
 }
 
-button:hover{
+.choices > div:hover, .scores > div:hover, .right-content:hover{
     cursor: pointer;
     opacity: 0.8;
 }
 
-button:active{
+.choices > div:active, .scores > div:active, .right-content:active{
     opacity: 0.6;
 }
 
@@ -31,27 +31,15 @@ body > div{
     padding: 20px 130px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
 }
 
 .header{
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    height: 100px;
+    height: 70px;
     padding: 10px 0px;
     background-color: rgb(207, 207, 207);
-}
-
-.left-content{
-    flex-basis: 80%;
-}
-
-.right-content{
-    height: 75%;
-    border-radius: 5px;
-    font-size: 15px;
-    font-weight: bold;
-    border: 1px solid rgb(40, 40, 40);
+    font-size: 17px;
 }
 
 .main, .header{
@@ -86,16 +74,22 @@ body > div{
     margin-bottom: 40px;
 }
 
-.choices > button, .scores > button{
+.choices > div, .scores > div{
     height: 170px;
-    width: 200px;
+    width: 170px;
     background-color: white;
     border-radius: 15px;
     border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 17px;
+    font-size: 40px;
+    font-weight: bold;
 }
 
-.choices > button{
-    font-size: 100px;
+#score{
+    font-size: 50px;
 }
 
 @media(max-width: 720px){
@@ -108,13 +102,11 @@ body > div{
         flex-wrap: wrap;
     }
 
-    .choices > button, .scores > button{
-        width: 100px;
-        height: 100px;
-    }
-
-    .choices > button{
-        font-size: 40px;
+    .choices > div, .scores > div{
+        width: 120px;
+        height: 120px;
+        font-size: 30px;
+        gap:10px;
     }
 
     .header{
@@ -124,6 +116,7 @@ body > div{
 }
 
 .commentary{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,6 +124,8 @@ body > div{
     height: 50px;
     border-radius: 5px;
     margin-bottom: 20px;
+    font-size: larger;
+    font-weight: 500;
 }
 
 .footer{
@@ -138,4 +133,12 @@ body > div{
     color: white;
     padding: 20px 130px;
     text-align: center;
+}
+
+a{
+    color: white;
+}
+
+a:hover{
+    text-decoration: none;
 }
