@@ -12,6 +12,15 @@ p, h3{
     margin: 0px;
 }
 
+button:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+button:active{
+    opacity: 0.6;
+}
+
 body > div{
     padding: 20px 50px;
 }
@@ -19,18 +28,19 @@ body > div{
 .nav{
     background-color: black;
     color: white;
-    padding: 20px 50px;
+    padding: 20px 130px;
     display: flex;
     justify-content: space-between;
 }
 
 .header{
     display: flex;
-    justify-content: center;
+    justify-content:space-between;
 }
 
-.left-content, .right.left-content{
-    flex-basis: 50%;
+.main, .header{
+    padding-right: 130px;
+    padding-left: 130px;
 }
 
 .main{
@@ -39,7 +49,6 @@ body > div{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: green;
 }
 
 .main div{
@@ -50,21 +59,26 @@ body > div{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 100%;
 }
 
 .choices, .scores{
     display: flex;
     gap: 40px;
+    margin-top: 20px;
     margin-bottom: 40px;
 }
 
-.choices > div, .scores > div{
-    height: 200px;
+.choices > button, .scores > button{
+    height: 170px;
     width: 200px;
-    display: flex;
-    align-items: center;
-    background-color: grey;
+    background-color: rgb(219, 219, 219);
     border-radius: 15px;
+    border: none;
+}
+
+.choices > button{
+    font-size: 100px;
 }
 
 @media(max-width: 720px){
@@ -72,9 +86,14 @@ body > div{
         flex-wrap: wrap;
     }
 
-    .choices > div, .scores > div{
+    .choices > button, .scores > button{
         width: 100px;
         height: 100px;
+    }
+
+    .header{
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
@@ -82,7 +101,7 @@ body > div{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid red;
+    border: 2px solid grey;
     height: 50px;
     border-radius: 25px;
 }
@@ -90,4 +109,5 @@ body > div{
 .footer{
     background-color: black;
     color: white;
+    padding: 20px 130px;
 }
