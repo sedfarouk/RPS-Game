@@ -22,11 +22,11 @@ button:active{
 }
 
 body > div{
-    padding: 20px 50px;
+    padding: 0px 50px;
 }
 
 .nav{
-    background-color: black;
+    background-color: rgb(40, 40, 40);
     color: white;
     padding: 20px 130px;
     display: flex;
@@ -36,6 +36,22 @@ body > div{
 .header{
     display: flex;
     justify-content:space-between;
+    align-items: center;
+    height: 100px;
+    padding: 10px 0px;
+    background-color: rgb(207, 207, 207);
+}
+
+.left-content{
+    flex-basis: 80%;
+}
+
+.right-content{
+    height: 75%;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid rgb(40, 40, 40);
 }
 
 .main, .header{
@@ -49,6 +65,7 @@ body > div{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(220, 220, 220);
 }
 
 .main div{
@@ -65,14 +82,14 @@ body > div{
 .choices, .scores{
     display: flex;
     gap: 40px;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 40px;
 }
 
 .choices > button, .scores > button{
     height: 170px;
     width: 200px;
-    background-color: rgb(219, 219, 219);
+    background-color: white;
     border-radius: 15px;
     border: none;
 }
@@ -82,6 +99,11 @@ body > div{
 }
 
 @media(max-width: 720px){
+    .nav, .main, .header, .footer{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     .choices{
         flex-wrap: wrap;
     }
@@ -89,6 +111,10 @@ body > div{
     .choices > button, .scores > button{
         width: 100px;
         height: 100px;
+    }
+
+    .choices > button{
+        font-size: 40px;
     }
 
     .header{
@@ -103,11 +129,13 @@ body > div{
     align-items: center;
     border: 2px solid grey;
     height: 50px;
-    border-radius: 25px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 .footer{
-    background-color: black;
+    background-color: rgb(40, 40, 40);
     color: white;
     padding: 20px 130px;
+    text-align: center;
 }
