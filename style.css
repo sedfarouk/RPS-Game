@@ -36,7 +36,7 @@ body > div{
 }
 
 .header{
-    height: 70px;
+    height: fit-content;
     padding: 10px 0px;
     background-color: rgb(207, 207, 207);
     font-size: 17px;
@@ -77,7 +77,7 @@ body > div{
 .choices > div, .scores > div{
     height: 170px;
     width: 170px;
-    background-color: white;
+    background-color: rgb(196, 196, 196);
     border-radius: 15px;
     border: none;
     display: flex;
